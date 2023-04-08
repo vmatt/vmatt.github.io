@@ -46,6 +46,7 @@
   <div class="container">
     <h1 class="mt-5">World's First AI-powered* Toilet Paper Calculator</h1>
     <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addBrandModal">Add brand</button>
+    <button class="btn btn-info mt-3" data-bs-toggle="modal" data-bs-target="#howToUseModal">How to use it</button>
     <table class="table mt-4">
       <thead>
         <tr>
@@ -106,7 +107,26 @@
       </div>
     </div>
   </div>
-
+  <div class="modal" tabindex="-1" id="howToUseModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">How to use it</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Step 1:</strong> Click the "Add brand" button to open the brand creation form.</p>
+          <p><strong>Step 2:</strong> Fill out the brand creation form with the necessary information (brand name, rolls per pack, sheets per roll, layers per sheet, and pack cost), and click "Save" to add the brand to the table.</p>
+          <p><strong>Step 3:</strong> To edit a brand, click the "Edit" button in the Actions column of the table. The brand form will open with the brand's information pre-filled. Make any necessary changes and click "Save" to update the brand.</p>
+          <p><strong>Step 4:</strong> To delete a brand, click the "Delete" button in the Actions column of the table.</p>
+          <p><strong>Step 5:</strong> Review the table to compare the comfort level and price per sheet of various toilet paper brands.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
 
