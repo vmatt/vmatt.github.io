@@ -25,13 +25,24 @@
             text-align: center;
             border-top: 1px solid #dee2e6;
           }
+          .medium-article-btn {
+            background-color: #00ab6c;
+            border-color: #00ab6c;
+            color: white;
+          }
+
+          .medium-article-btn:hover,
+          .medium-article-btn:focus {
+            background-color: #008c58;
+            border-color: #008c58;
+            color: white;
+          }
     </style>
 </head>
 <body>
   <div class="container">
     <h1 class="mt-5">World's First AI-powered Toilet Paper Calculator</h1>
     <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#addBrandModal">Add brand</button>
-
     <table class="table mt-4">
       <thead>
         <tr>
@@ -45,9 +56,11 @@
       </tbody>
     </table>
 <footer class="mt-5">
-  <p class="text-center">2023 Mate Valko<br>
+
+  <p class="text-center"><a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a> - 2023 - Mate Valko <br>
   <i>Proudly written by GPT-4, the next generation of advanced AI language models, designed to provide users with natural language understanding and generation capabilities. GPT-4 is committed to empowering creators and developers like Mate Valko to build innovative applications and solutions that harness the power of artificial intelligence.</i>
-    <br><a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a></p>
+    </p>
+  <button class="btn medium-article-btn mt-3" id="mediumArticleBtn">Read the Medium Article</button>
 </footer>
   </div>
 
@@ -234,7 +247,9 @@
 
       row.remove();
     });
-
+  $('#mediumArticleBtn').on('click', function () {
+    window.open('https://medium.com/@mate.valko/the-challenge-of-identifying-the-optimal-priced-toilet-paper-a-comprehensive-approach-f75caf86511a', '_blank');
+  });
   </script>
 </body>
 </html>
