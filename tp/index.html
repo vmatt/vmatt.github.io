@@ -8,8 +8,8 @@
   <meta property="og:image:height" content="1024">
   <meta property="og:image:type" content="image/png">
   <title>World's First AI-powered* Toilet Paper Calculator</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
           html, body {
             height: 100%;
@@ -32,14 +32,12 @@
           .medium-article-btn {
             background-color: #00ab6c;
             border-color: #00ab6c;
-            color: white;
           }
 
           .medium-article-btn:hover,
           .medium-article-btn:focus {
             background-color: #008c58;
             border-color: #008c58;
-            color: white;
           }
           .foot-note {
             font-size: 0.8em;
@@ -66,9 +64,10 @@
 <footer class="mt-5">
 
   <p class="text-center"><a href="https://creativecommons.org/licenses/by/2.0/">CC-BY</a> - 2023 - Mate Valko <br>
-  <i>Proudly written by GPT-4, the next generation of advanced AI language models, designed to provide users with natural language understanding and generation capabilities. GPT-4 is committed to empowering creators and developers like Mate Valko to build innovative applications and solutions that harness the power of artificial intelligence.</i>
+  <i>Proudly written by GPT-4, the next generation of advanced AI language models, designed to provide users with natural language understanding and generation capabilities.</i>
     <br><i class="foot-note">*If its created by an AI is it's powered by an AI? If a simple calculator is designed and developed by an AI, it can be said that its core functionality is powered by AI algorithms. However, the calculator itself may not be considered as "powered" by AI since it does not have any autonomous decision-making capabilities. Its functions are pre-programmed and limited to arithmetic calculations.</i></p>
-  <button class="btn medium-article-btn mt-3" id="mediumArticleBtn">Read the Medium Article</button>
+  <button class="btn medium-article-btn mt-3 text-white" id="mediumArticleBtn">Read the Medium Article</button><br>
+ <button class="btn btn-info mt-3 bg-white text-dark" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Privacy policy</button>
 </footer>
   </div>
 
@@ -127,6 +126,62 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" tabindex="-1" id="privacyPolicyModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       <div class="modal-body">
+          <h2>Privacy Policy for World's First AI-powered* Toilet Paper Calculator</h2>
+          <p>At World's First AI-powered* Toilet Paper Calculator, we are committed to protecting the privacy of our users.
+            This Privacy Policy outlines how we collect, use, and protect data collected from users of our website.</p>
+          <h3>Collection of Data</h3>
+          <p>We don't collect any application data - like what toilet brands and prices the user enters.
+            The application data exclusively stored locally in the browser's local storage, it cannot be transferred to another browser.
+            We collect anonymous user usage data through our website to improve the user experience and provide better service.
+            This data includes information about how users interact with our website and our
+            World's First AI-powered* Toilet Paper Calculator tool.
+            We do not collect any personally identifiable information, such as IP addresses or names.</p>
+          <h3>Use of Data</h3>
+          <p>We use the data we collect to improve our website and the World's First AI-powered* Toilet Paper Calculator
+            tool. This includes analyzing user behavior and preferences, identifying technical issues,
+            and optimizing our website's performance. We do not share any user data with third parties,
+            and all data is kept confidential.</p>
+          <h3>Data Protection</h3>
+          <p>We take data protection seriously and have implemented security measures to protect user data f
+            rom unauthorized access, disclosure, alteration, or destruction. We use a self-hosted analytics
+            solution on analytics.valq.hu, and the sole owner of this solution is Mate Valko.</p>
+          <h3>Cookies</h3>
+          <p>We use cookies to improve the user experience on our website. Cookies are small text files that are
+            stored on a user's device and are used to remember user preferences and login information.
+            Users can control how cookies are used by adjusting their browser settings.</p>
+          <h3>Third-Party Links</h3>
+          <p>Our website may contain links to third-party websites.
+            We are not responsible for the privacy practices or content of these websites.
+            We encourage users to read the privacy policies of these websites before providing any personal information.
+          </p>
+          <h3>Children's Privacy</h3>
+          <p>Our website is not intended for children under the age of 13.
+            We do not knowingly collect any personal information from children under the age of 13.
+            If we become aware that we have collected personal information from a child under the age of 13,
+            we will take steps to delete the information immediately.</p>
+          <h3>Changes to Privacy Policy</h3>
+          <p>We reserve the right to update or modify this Privacy Policy at any time. Users will be notified
+            of any changes to the Privacy Policy via our website. By continuing to use our website, users agree to
+            the updated Privacy Policy.</p>
+          <h3>Contact Us</h3>
+          <p>If you have any questions or concerns about our Privacy Policy, please contact us
+            at <a href="mailto:toiletpaper@valq.hu">toiletpaper@valq.hu</a>.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="privacyPolicyDecline">Decline</button>
+          <button type="button" class="btn btn-primary" id="privacyPolicyAccept">I accept</button>
         </div>
       </div>
     </div>
@@ -274,9 +329,56 @@
 
       row.remove();
     });
-  $('#mediumArticleBtn').on('click', function () {
-    window.open('https://medium.com/@mate.valko/the-challenge-of-identifying-the-optimal-priced-toilet-paper-a-comprehensive-approach-f75caf86511a', '_blank');
-  });
+    $('#mediumArticleBtn').on('click', function () {
+      window.open('https://medium.com/@mate.valko/the-challenge-of-identifying-the-optimal-priced-toilet-paper-a-comprehensive-approach-f75caf86511a', '_blank');
+    });
+
+    // when page fully loads:
+    $(document).ready(function() {
+      // Check if user has accepted privacy policy before
+      console.log(localStorage.getItem('privacyPolicyAccepted'));
+      if (localStorage.getItem('privacyPolicyAccepted')!=='true') {
+
+        // If not, show privacy policy modal
+        $('#privacyPolicyModal').modal('show');
+        $('#privacyPolicyModal').on('shown.bs.modal', function () {
+          // When modal is shown, focus on the "Accept" button
+          $('#privacyPolicyAccept').focus();
+      });
+      }
+
+      // When user clicks "Accept" button
+      $('#privacyPolicyAccept').click(function () {
+        // Store user's choice in localStorage
+        localStorage.setItem('privacyPolicyAccepted', true);
+        // Hide the modal
+        $('#privacyPolicyModal').modal('hide');
+      });
+
+      // When user clicks "Decline" button
+      $('#privacyPolicyDecline').click(function() {
+        // Redirect user to a different page or take appropriate action
+        localStorage.setItem('privacyPolicyAccepted', false);
+        window.location.href = 'https://www.google.com';
+      });
+    });
+
   </script>
+
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//analytics.valq.hu/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+</script>
+
+
 </body>
 </html>
